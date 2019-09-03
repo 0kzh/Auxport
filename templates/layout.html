@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Convert your playlists between Spotify, Apple Music, Tidal, and YouTube for free.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:url" content="https://auxport.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="auxport" />
+  <meta property="og:description" content="Convert your playlists between Spotify, Apple Music, Tidal, and YouTube for free." />
+  <meta property="og:image" content="http://auxport.com/static/img/ogimage.jpg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon-16x16.png') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='img/site.webmanifest') }}">
+  <link rel="mask-icon" href="{{ url_for('static', filename='img/safari-pinned-tab.svg') }}" color="#5bbad5">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"></link>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127033126-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-127033126-1');
+  </script>
+  <title>Auxport | Convert between Spotify, Apple Music, Tidal, YouTube</title>
+</head>
+
+<body>
+  <div class="container content">
+    {% include 'auth-block.html' %}
+    {% include 'modals.html' %}
+    {% include 'logo.html' %}
+
+    {% block body %}{% endblock %}
+  </div>
+  <div class="container">
+    <div id="footer">
+      <a class="no-underline" href="/contact">Contact</a>
+      <a class="no-underline" href="/privacy-policy">Privacy Policy</a>
+      <a class="no-underline" href="/terms-of-use">Terms of Use</a>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bb71b00cf4a71c6"></script>
+</body>
+</html>

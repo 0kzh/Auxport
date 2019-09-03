@@ -1,0 +1,104 @@
+<div id="login-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+
+        <h1>Login<button class="delete" type="button" aria-label="close"></button></h1>
+        <div class="notification hidden">
+          <button class="delete"></button>
+          <div class="info-message"></div>
+        </div>
+        {% include 'login-form.html' %}
+        <button id="do-login" class="button is-primary" type="button">Login</button>
+        <button class="button signup float-right is-transparent">Don't have an account? Sign up.</button>
+        <button class="button password-reset float-right is-transparent">Forgot Password?</button>
+    </section>
+  </div>
+</div>
+
+<div id="password-reset-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+
+        <h1>Reset Password<button class="delete" type="button" aria-label="close"></button></h1>
+        <div class="notification hidden">
+          <button class="delete"></button>
+          <div class="info-message"></div>
+        </div>
+        {% include 'password-form.html' %}
+        <button id="do-password-reset" class="button is-primary" type="button">Reset Password</button>
+        <button class="button login float-right is-transparent" style="color: #1DB954;">Back to Login</button>
+    </section>
+  </div>
+</div>
+
+<div id="new-password-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+
+        <h1>Set New Password<button class="delete" type="button" aria-label="close"></button></h1>
+        <div class="notification hidden">
+          <button class="delete"></button>
+          <div class="info-message"></div>
+        </div>
+        {% include 'new-password.html' %}
+        <button id="set-new-password" class="button is-primary" type="button">Reset Password</button>
+        <button class="button login float-right is-transparent" style="color: #1DB954;">Back to Login</button>
+    </section>
+  </div>
+</div>
+
+<div id="signup-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+      <h1>Support Us!<button class="delete" type="button" aria-label="close"></button></h1>
+      <div class="notification hidden">
+        <button class="delete"></button>
+        <div class="info-message"></div>
+      </div>
+      <div class="columns">
+        <div class="column is-three-fifths">
+          <img src="/static/img/logo_plus.png" alt="" />
+        </div>
+        <div class="column">
+          {% include 'plan-select.html' %}
+          {% include 'login-form.html' %}
+          <button id="do-signup" class="button is-primary is-medium" type="button">Upgrade now {{ '€' if continent == "EU" else '$' }}36</button>
+        </div>
+      </div>
+    </section>
+    <footer id="modal-footer" class="modal-card-foot">
+      <button id="do-convert" class="button is-primary">No thanks, just convert</button>
+    </footer>
+  </div>
+</div>
+
+<div id="help-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <section class="modal-card-body">
+
+      <h1>Help! I can't find the link!<button class="delete" type="button" aria-label="close"></button></h1>
+
+
+      <div class="desktop">
+        <p>Get the link by 'Right clicking a song/playlist' -> 'Share' -> 'Copy Song/Playlist Link'</p>
+        <img src="/static/img/help_desktop.png">
+      </div>
+
+      <div class="mobile">
+        <p>Get the link by 'Tapping on the three dots beside a song/playlist' -> 'Share' -> 'Copy Link'</p>
+        <h3>Step 1</h3>
+        <img src="/static/img/help_mobile1.jpg" alt="" />
+        <h3>Step 2</h3>
+        <img src="/static/img/help_mobile2.jpg" alt="" />
+        <h3>Step 3</h3>
+        <img src="/static/img/help_mobile3.jpg" alt="" />
+      </div>
+
+    </section>
+  </div>
+</div>

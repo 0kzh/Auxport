@@ -1,0 +1,27 @@
+<script>
+var loggedIn = false  
+{% if logged_in %}
+  loggedIn = true
+{% endif %}
+var pwdToken = ''  
+{% if pwd_token %}
+  pwdToken = "{{ pwd_token }}"
+{% endif %}
+{% if action == "log_in" %}
+  setTimeout(() => {
+    $(".login").click()
+  }, 500)
+{% elif action == "sign_up" %}
+  setTimeout(() => {
+    $(".signup").click()
+  }, 500)
+{% endif %}
+</script>
+<div class="auth block align-right">
+  {% if logged_in %}
+  <button class="logout button is-transparent">Logout</button>
+  {% else %}
+  <button class="login button is-transparent">Login</button>
+  <button class="signup button is-primary">Signup</button>
+  {% endif %}
+</div>

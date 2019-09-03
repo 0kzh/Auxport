@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div id="link" class="field has-addons block full-width">
+  <div class="control full-width">
+    <input id="playlist-link" class="input is-medium" type="text" placeholder="Enter a song or playlist link" class="form-control">
+  </div>
+  <div class="control">
+    <button id="convert" class="button is-primary is-medium" type="button">Convert</button>
+  </div>
+  <div class="control">
+    <label for="source">From:</label>
+    <select id="source">
+      <option value="spotify">Spotify</option>
+      <option value="apple">Apple Music</option>
+      <option value="tidal">Tidal</option>
+      <option value="youtube">YouTube</option>
+    </select>
+
+    <label for="dest">To:</label>
+    <select id="dest">
+      <option value="spotify">Spotify</option>
+      <option value="apple">Apple Music</option>
+      <option value="tidal">Tidal</option>
+      <option value="youtube">YouTube</option>
+    </select>
+  </div>
+</div>
+<a class="tooltip no-underline">How can I find the link?</a>
+
+<div class="expandable">
+  <div class="notification is-danger hidden">
+    <button class="delete"></button>
+    <div class="info-message"></div>
+  </div>
+  <p id="current-song" class="inline-block"></p>
+  <p id="progress-text" class="inline-block float-right"></p>
+  <progress id="progress" class="progress is-primary" value="0" max="100">0%</progress>
+</div>
+
+<div class="info">
+  <h1>About Auxport</h1>
+  <p>Auxport is an online converter that allows you migrate playlists between Spotify, Apple Music, Tidal, and YouTube. It's fast, free, and easy to use. No registration is required to use this service, but upgrading gives you extra features.</p>
+  <p>To convert a song/playlist, simply copy the playlist link into the search bar, click the convert button, and a new playlist link will be generated at your convenience. </p>
+</div>
+<div class="addthis_inline_share_toolbox"></div>
+{% endblock %}

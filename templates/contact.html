@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="notification hidden">
+  <button class="delete"></button>
+  <div class="info-message"></div>
+</div>
+
+<h1>Contact Us</h1>
+
+<div class="contact-form">
+  <p>Whether you have a problem, a suggestion, or a question, feel free to shoot us a message using the form below. We typically only respond to messages in English, and will most likely reply in 1-2 business days.</p>
+  <div class="field email">
+    <div class="control has-icons-left">
+      <input name="email" class="input" type="email" placeholder="Email">
+      <span class="icon is-small is-left">
+        <i class="material-icons">email</i>
+      </span>
+    </div>
+    <p class="help is-danger hidden">Please enter a valid email</p>
+  </div>
+  <div class="field subject">
+    <div class="control has-icons-left">
+      <input name="subject" class="input" type="text" placeholder="Subject">
+      <span class="icon is-small is-left">
+        <i class="material-icons">edit</i>
+      </span>
+    </div>
+    <p class="help is-danger hidden">Please enter a subject</p>
+  </div>
+  <div class="field message">
+    <div class="control">
+      <textarea name="message" class="textarea" placeholder="Message"></textarea>
+      <p class="help is-danger hidden">Please enter a message</p>
+    </div>
+  </div>
+  <div class="field captcha">
+    <div class="control has-icons-left">
+      <input name="captcha" class="input" type="text" placeholder="{{ question }}">
+      <span class="icon is-small is-left">
+        <i class="material-icons">fingerprint</i>
+      </span>
+    </div>
+    <p class="help is-danger hidden">Invalid captcha</p>
+  </div>
+  <button id="send-message" class="button is-primary is-medium" type="button">Send Message</button>
+</div>
+<script id="answer">
+  const answer = {{ answer }}
+</script>
+<script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+
+{% endblock %}
